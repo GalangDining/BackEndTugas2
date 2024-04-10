@@ -155,7 +155,7 @@ async function patchUser(request, response, next) {
     const new_password = request.body.new_password;
     const new_password_confirm = request.body.new_password_confirm;
 
-  if(old_password!=old_password_confirm||new_password!=new_password_confirm) {
+  if(old_password!=old_password_confirm&&new_password!=new_password_confirm) {
     throw errorResponder(
       errorTypes.INVALID_PASSWORD,
       'INVALID_PASSWORD_ERROR'
